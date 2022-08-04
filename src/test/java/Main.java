@@ -8,9 +8,6 @@ public class Main {
     }
 
     public static String tokenGenerator() {
-        System.out.println("Insert a number of token length" +
-                "(available numbers are 5, 10, 15). \nIf you choose wrong the " +
-                "5 will be set as default.");
         int numOfCharacters = askUserForTokenLength();
         StringBuilder token = new StringBuilder();
         for (int i = 0; i < numOfCharacters; i++) {
@@ -35,6 +32,9 @@ public class Main {
     }
 
     public static int askUserForTokenLength() {
+        System.out.println("Insert a number of token length" +
+                "(available numbers are 5, 10, 15). \nIf you choose wrong the " +
+                "5 will be set as default.");
         Scanner scn = new Scanner(System.in);
         String userNumber = scn.nextLine().strip();
         return tryParseInt(userNumber, 5);
