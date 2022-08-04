@@ -11,7 +11,8 @@ public class Main {
         int numOfCharacters = askUserForTokenLength();
         StringBuilder token = new StringBuilder();
         for (int i = 0; i < numOfCharacters; i++) {
-            // 33 stands for '!' and after that letters and special characters, 126 stands for '~'
+            // 33 - 126 ascii table that contains letters, numbers and special characters
+            // for more info check ascii code table
             token.append((char) generateRandomNumber(33, 126));
         }
         return token.toString();
