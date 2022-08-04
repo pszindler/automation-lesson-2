@@ -29,14 +29,9 @@ public class Main {
     }
 
     public static int tryParseInt(String value, int defaultValue) {
-        String defaultValCommunicate = "5 has been used as default value";
         String[] arrayOfCorrectNumbers = {"5", "10", "15"};
-        if (Arrays.asList(arrayOfCorrectNumbers).contains(value)) {
-            return Integer.parseInt(value);
-        } else {
-            System.out.println(defaultValCommunicate);
-            return defaultValue;
-        }
+        return (Arrays.asList(arrayOfCorrectNumbers).contains(value))
+                ? Integer.parseInt(value) : defaultValue;
     }
 
     public static int askUserForTokenLength() {
