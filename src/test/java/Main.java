@@ -10,7 +10,7 @@ public class Main {
     }
 
     public static @NotNull String tokenGenerator() {
-        int numOfCharacters = askUserForTokenLength();
+        int numOfCharacters = askUserForTokenLengthAndValidate();
         StringBuilder token = new StringBuilder();
         for (int i = 0; i < numOfCharacters; i++) {
             // 33 - 126 ascii table that contains letters, numbers and special characters
