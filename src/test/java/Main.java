@@ -1,3 +1,5 @@
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
@@ -7,7 +9,7 @@ public class Main {
         System.out.println(tokenGenerator());
     }
 
-    public static String tokenGenerator() {
+    private static @NotNull String tokenGenerator() {
         int numOfCharacters = askUserForTokenLength();
         StringBuilder token = new StringBuilder();
         for (int i = 0; i < numOfCharacters; i++) {
@@ -18,7 +20,7 @@ public class Main {
         return token.toString();
     }
 
-    public static int generateRandomNumber(int min, int max) {
+    private static int generateRandomNumber(int min, int max) {
         Random random = new Random();
         return random.ints(min, max)
                 .findFirst()
@@ -26,19 +28,16 @@ public class Main {
 
     }
 
-    public static int tryParseInt(String value, int defaultValue) {
+    private static int askUserForTokenLength() {
+        System.out.println("Insert a number of token length " +
+                "(available numbers are 5, 10, 15)");
         String[] arrayOfCorrectNumbers = {"5", "10", "15"};
-        return (Arrays.asList(arrayOfCorrectNumbers).contains(value))
-                ? Integer.parseInt(value) : defaultValue;
-    }
-
-    public static int askUserForTokenLength() {
-        System.out.println("Insert a number of token length" +
-                "(available numbers are 5, 10, 15). \nIf you choose wrong the " +
-                "5 will be set as default.");
         Scanner scn = new Scanner(System.in);
-        String userNumber = scn.nextLine().strip();
-        return tryParseInt(userNumber, 5);
+        String userNumber = "";
+        while (!Arrays.asList(arrayOfCorrectNumbers).contains(userNumber)) {
+            System.out.println("Please insert correct token length");
+            userNumber = scn.nextLine().strip();
+        }
+        return Integer.parseInt(userNumber);
     }
-
 }
