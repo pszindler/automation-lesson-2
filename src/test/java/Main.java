@@ -28,7 +28,7 @@ public class Main {
 
     }
 
-    private static int askUserForTokenLength() {
+    private static int askUserForTokenLengthAndValidate() {
         System.out.println("Insert a number of token length " +
                 "(available numbers are 5, 10, 15)");
         String[] arrayOfCorrectNumbers = {"5", "10", "15"};
