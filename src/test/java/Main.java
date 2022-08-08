@@ -9,7 +9,7 @@ public class Main {
         System.out.println(tokenGenerator());
     }
 
-    private static @NotNull String tokenGenerator() {
+    public static @NotNull String tokenGenerator() {
         int numOfCharacters = askUserForTokenLength();
         StringBuilder token = new StringBuilder();
         for (int i = 0; i < numOfCharacters; i++) {
